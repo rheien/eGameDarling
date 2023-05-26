@@ -1,4 +1,4 @@
-package de.ostzimt.database.model.egamedarling;
+package de.oszimt.database.model.egamedarling;
 
 public class Gamer {
 

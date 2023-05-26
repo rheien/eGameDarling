@@ -1,6 +1,4 @@
-package de.ostzimt.database.service;
-
-import de.ostzimt.database.model.versand.Kunden;
+package de.oszimt.database.service;
 
 public interface EditingDatabase<Type>  {
 

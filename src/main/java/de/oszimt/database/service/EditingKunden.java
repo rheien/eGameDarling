@@ -1,7 +1,7 @@
-package de.ostzimt.database.service;
+package de.oszimt.database.service;
 
-import de.ostzimt.database.client.DBConnection;
-import de.ostzimt.database.model.versand.Kunden;
+import de.oszimt.database.client.DBConnection;
+import de.oszimt.database.model.versand.Kunden;
 
 import java.sql.Connection;
 import java.sql.SQLException;

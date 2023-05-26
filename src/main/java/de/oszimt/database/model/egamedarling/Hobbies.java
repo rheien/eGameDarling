@@ -1,4 +1,4 @@
-package de.ostzimt.database.model.egamedarling;
+package de.oszimt.database.model.egamedarling;
 
 public class Hobbies {
     public String p_hobby_id;
