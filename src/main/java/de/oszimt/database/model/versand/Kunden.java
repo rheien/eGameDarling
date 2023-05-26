@@ -1,4 +1,4 @@
-package de.ostzimt.database.model.versand;
+package de.oszimt.database.model.versand;
 
 import lombok.Getter;
 import lombok.Setter;

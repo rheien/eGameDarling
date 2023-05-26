@@ -1,6 +1,6 @@
-package de.ostzimt.controller;
+package de.oszimt.controller;
 
-import de.ostzimt.database.model.versand.Kunden;
+import de.oszimt.database.model.versand.Kunden;
 
 import java.sql.ResultSet;
 import java.sql.Statement;

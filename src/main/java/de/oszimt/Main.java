@@ -1,9 +1,9 @@
-package de.ostzimt;
+package de.oszimt;
 
-import de.ostzimt.controller.Input;
-import de.ostzimt.database.client.DBConnection;
-import de.ostzimt.controller.Login;
-import de.ostzimt.database.service.EditingKunden;
+import de.oszimt.controller.Input;
+import de.oszimt.database.client.DBConnection;
+import de.oszimt.controller.Login;
+import de.oszimt.database.service.EditingKunden;
 
 import java.sql.Statement;
 import java.sql.SQLException;
@@ -24,6 +24,7 @@ public class Main {
                 System.out.println("Benutzername oder Passwort falsch! \nBitte versuchen Sie es erneut!");
             }
 
+            System.out.println("\nZum Registrieren:\n");
             EditingKunden editingKunden = new EditingKunden();
             System.out.println("Bitte geben Sie Daten für einen neuen Kunden ein: ");
             editingKunden.insert(input.setKunden(scanner));
