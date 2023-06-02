@@ -21,8 +21,10 @@ public class RegistrationPage extends JFrame implements ActionListener {
             strasse,
             plz,
             ort;
-            /*letztebestellung,
-            letztewerbeaktion;*/
+            /*
+            letztebestellung,
+            letztewerbeaktion;
+            */
 
     JTextArea kundennummerEingabe,
             statusEingabe,
@@ -32,8 +34,10 @@ public class RegistrationPage extends JFrame implements ActionListener {
             strasseEingabe,
             plzEingabe,
             ortEingabe;
-            /*letztebestellungText,
-            letztewerbeaktionText;*/
+            /*
+            letztebestellungText,
+            letztewerbeaktionText;
+            */
 
     JButton submit, back;
 

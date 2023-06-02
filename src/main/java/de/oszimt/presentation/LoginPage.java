@@ -68,7 +68,5 @@ public class LoginPage extends JFrame implements ActionListener {
         if(event.getSource() == back) {
             new LandingPage();
         }
-
-
     }
 }
