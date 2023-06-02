@@ -1,12 +1,16 @@
 package de.oszimt.presentation;
 
 import de.oszimt.controller.Registration;
+import de.oszimt.database.model.Status;
+import de.oszimt.database.model.Zahlung;
 import de.oszimt.database.model.versand.Kunden;
 import de.oszimt.database.service.EditingKunden;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class RegistrationPage extends JFrame implements ActionListener {
     JLabel kundennummer,
@@ -45,7 +49,9 @@ public class RegistrationPage extends JFrame implements ActionListener {
         kundennummerEingabe.setBounds(50, 70, 100, 20);
         add(kundennummerEingabe);
 
-        status = new JLabel("Status S,W oder G");
+        //concat ENUM Status to String
+        String enumStatus = Stream.of(Status.values()).map(Enum::name).collect(Collectors.joining(", "));
+        status = new JLabel("Status "+ enumStatus);
         status.setBounds(50, 100, 200, 20);
         add(status);
 
@@ -53,7 +59,9 @@ public class RegistrationPage extends JFrame implements ActionListener {
         statusEingabe.setBounds(50, 120, 100, 20);
         add(statusEingabe);
 
-        zahlung = new JLabel("Zahlung N, B , R, V oder K");
+        //concat ENUM Zahlung to String
+        String enumZahlung = Stream.of(Zahlung.values()).map(Enum::name).collect(Collectors.joining(", "));
+        zahlung = new JLabel("Zahlung "+ enumZahlung);
         zahlung.setBounds(50, 150, 200, 20);
         add(zahlung);
 
