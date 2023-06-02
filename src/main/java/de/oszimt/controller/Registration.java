@@ -4,7 +4,7 @@ import de.oszimt.database.model.versand.Kunden;
 
 import java.util.Scanner;
 
-public class Input {
+public class Registration {
     public String values(String text, Scanner scanner) {
         System.out.println(text);
         return scanner.nextLine();
@@ -38,7 +38,7 @@ public class Input {
         }
     }
 
-    public boolean validPlz(String plz) {
+    public boolean validPLZ(String plz) {
         try {
             Integer.parseInt(plz);
             return plz.length() == 5;
@@ -48,8 +48,9 @@ public class Input {
         }
     }
 
-    public Kunden setKunden(Scanner scanner) {
+    public Kunden setKunden() {
 
+        Scanner scanner = new Scanner(System.in);
         String p_kunden_nr;
         do {
             p_kunden_nr = values("Bitte geben Sie eine Kundennummer ein: ", scanner);
@@ -83,7 +84,7 @@ public class Input {
         String plz;
         do {
             plz = values("Bitte geben Sie eine Postleitzahl ein: ", scanner);
-        } while (!validPlz(plz));
+        } while (!validPLZ(plz));
 
         String ort;
         do {
@@ -96,5 +97,9 @@ public class Input {
         } while (letztebestellung.isEmpty());*/
 
         return new Kunden(p_kunden_nr, status, zahlung, vname, nname, strasse, plz, ort);
+    }
+
+    public Kunden validSetKunden(){
+        return null;
     }
 }

@@ -20,6 +20,10 @@ public class Kunden {
     public Kunden() {
     }
 
+    public Kunden(String p_kunden_nr, String nname) {
+        this.p_kunden_nr = p_kunden_nr;
+        this.nname = nname;
+    }
     public Kunden(String p_kunden_nr, String status, String zahlung, String vname, String nname, String strasse, String plz, String ort) {
         this.p_kunden_nr = p_kunden_nr;
         this.status = status;
