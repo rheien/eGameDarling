@@ -9,10 +9,10 @@ public class Login {
 
     public boolean checkingAccount(Kunden kunden) {
         try {
-
             Statement statement = DBConnection.toDatabase().createStatement();
             String query = "SELECT * FROM T_Kunden WHERE p_kunden_nr = '" + kunden.getPKundenNr() + "' AND nname = '" + kunden.getNname() + "';";
             ResultSet resultSet = statement.executeQuery(query);
+            DBConnection.toDatabase().close();
 
             while(resultSet.next()) {
                 return (resultSet.getString("p_kunden_nr").equals(kunden.getPKundenNr()) &&

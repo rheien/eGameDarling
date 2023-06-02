@@ -24,14 +24,4 @@ public class DBConnection {
             return null;
         }
     }
-
-    public static void exitingDatabase(Connection connection) {
-        try {
-            if (connection != null) {
-                connection.close();
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
 }

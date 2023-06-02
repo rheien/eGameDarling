@@ -176,8 +176,9 @@ public class RegistrationPage extends JFrame implements ActionListener {
         }
 
         if (event.getSource() == back) {
+            setVisible(false);
             dispose();
-            new LoginPage();
+            new LoginPage().setVisible(true);
         }
     }
 

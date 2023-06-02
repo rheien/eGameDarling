@@ -3,7 +3,6 @@ package de.oszimt.database.service;
 import de.oszimt.database.client.DBConnection;
 import de.oszimt.database.model.versand.Kunden;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -12,8 +11,7 @@ public class EditingKunden implements EditingDatabase<Kunden> {
     @Override
     public void insert(Kunden kunden) {
         try {
-            Connection connection = DBConnection.toDatabase();
-            Statement statement = connection.createStatement();
+            Statement statement = DBConnection.toDatabase().createStatement();
 
             String insertQuery = "INSERT INTO T_Kunden (p_kunden_nr, status, zahlung, vname, nname, strasse, plz, ort) VALUES ('" +
                     kunden.getPKundenNr() + "', '" +
@@ -27,7 +25,7 @@ public class EditingKunden implements EditingDatabase<Kunden> {
 
             statement.executeUpdate(insertQuery);
 
-            DBConnection.exitingDatabase(connection);
+            DBConnection.toDatabase().close();
         } catch (SQLException e) {
             //TODO: Exception handling
             throw new RuntimeException(e);
@@ -37,13 +35,12 @@ public class EditingKunden implements EditingDatabase<Kunden> {
     @Override
     public void delete(Kunden kunden) {
         try{
-            Connection connection = DBConnection.toDatabase();
-            Statement statement = connection.createStatement();
+            Statement statement = DBConnection.toDatabase().createStatement();
 
             String deleteQuery = "DELETE FROM T_Kunden WHERE p_kunden_nr = '" + kunden.getPKundenNr() + "'";
             statement.executeUpdate(deleteQuery);
 
-            DBConnection.exitingDatabase(connection);
+            DBConnection.toDatabase().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -52,11 +49,12 @@ public class EditingKunden implements EditingDatabase<Kunden> {
     @Override
     public void update(Kunden kunden) {
         try {
-            Connection connection = DBConnection.toDatabase();
-            Statement statement = connection.createStatement();
+            Statement statement = DBConnection.toDatabase().createStatement();
 
             String updateQuery = "UPDATE T_Kunden SET nname = '" + kunden.getNname() + "' WHERE p_kunden_nr = '" + kunden.getPKundenNr() + "'";
+            statement.executeUpdate(updateQuery);
 
+            DBConnection.toDatabase().close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -15,7 +15,7 @@ public class LoginPage extends JFrame implements ActionListener {
         super("Login to eGameDarling");
 
         kundennummer = new JLabel("Kundennummer: ");
-        kundennummer.setBounds(50, 50, 100, 20);
+        kundennummer.setBounds(50, 50, 150, 20);
         add(kundennummer);
 
         kundennummerEingabe = new JTextArea();
@@ -61,12 +61,17 @@ public class LoginPage extends JFrame implements ActionListener {
                     return;
                 }
                 JOptionPane.showMessageDialog(null, "Login erfolgreich!");
+                setVisible(false);
+                dispose();
+                new LandingPage(kunden);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Login fehlgeschlagen!");
             }
         }
         if(event.getSource() == back) {
-            new LandingPage();
+            setVisible(false);
+            dispose();
+            new LandingPage().setVisible(true);
         }
     }
 }
