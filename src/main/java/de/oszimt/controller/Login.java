@@ -11,11 +11,11 @@ public class Login {
         try {
 
             Statement statement = DBConnection.toDatabase().createStatement();
-            String query = "SELECT * FROM T_Kunden WHERE p_kunden_nr = '" + kunden.getP_kunden_nr() + "' AND nname = '" + kunden.getNname() + "';";
+            String query = "SELECT * FROM T_Kunden WHERE p_kunden_nr = '" + kunden.getPKundenNr() + "' AND nname = '" + kunden.getNname() + "';";
             ResultSet resultSet = statement.executeQuery(query);
 
             while(resultSet.next()) {
-                return (resultSet.getString("p_kunden_nr").equals(kunden.getP_kunden_nr()) &&
+                return (resultSet.getString("p_kunden_nr").equals(kunden.getPKundenNr()) &&
                         resultSet.getString("nname").equals(kunden.getNname()));
             }
             return false;

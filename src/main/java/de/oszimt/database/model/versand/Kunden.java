@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Kunden {
-    private String p_kunden_nr;
+    private String pKundenNr;
     private String status;
     private String zahlung;
     private String vname;
@@ -20,12 +20,12 @@ public class Kunden {
     public Kunden() {
     }
 
-    public Kunden(String p_kunden_nr, String nname) {
-        this.p_kunden_nr = p_kunden_nr;
+    public Kunden(String pKundenNr, String nname) {
+        this.pKundenNr = pKundenNr;
         this.nname = nname;
     }
-    public Kunden(String p_kunden_nr, String status, String zahlung, String vname, String nname, String strasse, String plz, String ort) {
-        this.p_kunden_nr = p_kunden_nr;
+    public Kunden(String pKundenNr, String status, String zahlung, String vname, String nname, String strasse, String plz, String ort) {
+        this.pKundenNr = pKundenNr;
         this.status = status;
         this.zahlung = zahlung;
         this.vname = vname;
@@ -59,8 +59,8 @@ public class Kunden {
         this.letztewerbeaktion = letztewerbeaktion;
     }*/
 
-    public Kunden(String p_kunden_nr, String status, String zahlung, String vname, String nname, String strasse, String plz, String ort, String letztebestellung, String letztewerbeaktion) {
-        this.p_kunden_nr = p_kunden_nr;
+    public Kunden(String pKundenNr, String status, String zahlung, String vname, String nname, String strasse, String plz, String ort, String letztebestellung, String letztewerbeaktion) {
+        this.pKundenNr = pKundenNr;
         this.status = status;
         this.zahlung = zahlung;
         this.vname = vname;

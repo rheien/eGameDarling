@@ -16,7 +16,7 @@ public class EditingKunden implements EditingDatabase<Kunden> {
             Statement statement = connection.createStatement();
 
             String insertQuery = "INSERT INTO T_Kunden (p_kunden_nr, status, zahlung, vname, nname, strasse, plz, ort) VALUES ('" +
-                    kunden.getP_kunden_nr() + "', '" +
+                    kunden.getPKundenNr() + "', '" +
                     kunden.getStatus() + "', '" +
                     kunden.getZahlung() + "', '" +
                     kunden.getVname() + "', '" +
@@ -27,10 +27,10 @@ public class EditingKunden implements EditingDatabase<Kunden> {
 
             statement.executeUpdate(insertQuery);
 
-            System.out.println("Kunde " + kunden.getNname() + " wurde erfolgreich angelegt!");
             DBConnection.exitingDatabase(connection);
         } catch (SQLException e) {
-            System.out.println("Fehler: Unvollständige Eingabe!" + e);
+            //TODO: Exception handling
+            throw new RuntimeException(e);
         }
     }
 
@@ -40,10 +40,9 @@ public class EditingKunden implements EditingDatabase<Kunden> {
             Connection connection = DBConnection.toDatabase();
             Statement statement = connection.createStatement();
 
-            String deleteQuery = "DELETE FROM T_Kunden WHERE p_kunden_nr = '" + kunden.getP_kunden_nr() + "'";
+            String deleteQuery = "DELETE FROM T_Kunden WHERE p_kunden_nr = '" + kunden.getPKundenNr() + "'";
             statement.executeUpdate(deleteQuery);
 
-            System.out.println("Kunde " + kunden.getNname() + " wurde erfolgreich gelöscht!");
             DBConnection.exitingDatabase(connection);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -56,7 +55,7 @@ public class EditingKunden implements EditingDatabase<Kunden> {
             Connection connection = DBConnection.toDatabase();
             Statement statement = connection.createStatement();
 
-            String updateQuery = "UPDATE T_Kunden SET nname = '" + kunden.getNname() + "' WHERE p_kunden_nr = '" + kunden.getP_kunden_nr() + "'";
+            String updateQuery = "UPDATE T_Kunden SET nname = '" + kunden.getNname() + "' WHERE p_kunden_nr = '" + kunden.getPKundenNr() + "'";
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
