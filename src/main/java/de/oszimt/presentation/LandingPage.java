@@ -12,8 +12,10 @@ public class LandingPage extends JFrame implements ActionListener {
     JButton insert, delete, update;
     JButton logout;
 
+    static String text = " eGameDarling - Plattform für Gamer";
+
     public LandingPage(){
-        super(" eGameDarling - Plattform für Gamer");
+        super(text);
 
         willkommenstext = new JLabel("Willkommen auf eGameDarling");
         willkommenstext.setBounds(50, 50, 200, 20);
@@ -41,7 +43,7 @@ public class LandingPage extends JFrame implements ActionListener {
     }
 
     public LandingPage(Kunden user){
-        super(" eGameDarling - Plattform für Gamer");
+        super(text);
 
         willkommenstext = new JLabel("Willkommen "+  user.getNname().toString() + " auf eGameDarling");
         willkommenstext.setBounds(50, 50, 200, 20);
@@ -86,11 +88,29 @@ public class LandingPage extends JFrame implements ActionListener {
             //TODO: what happened after login?
         }
         if(event.getSource() == register) {
-            RegistrationPage registrationPage = new RegistrationPage();
+            RegistrationPage registrationPage = new RegistrationPage("Registration for eGameDarling");
         }
 
         if(event.getSource() == exit) {
             System.exit(0);
+        }
+
+        if(event.getSource() == insert) {
+            InsertPage insertPage = new InsertPage("Add new user for eGameDarling");
+            //RegistrationPage registrationPage = new RegistrationPage("Add new user for eGameDarling");
+        }
+
+        if(event.getSource() == delete) {
+            DeletePage deletePage = new DeletePage();
+        }
+
+        if(event.getSource() == update) {
+            //UpdatePage updatePage = new UpdatePage();
+        }
+
+        if(event.getSource() == logout) {
+            setVisible(false);
+            LandingPage landingPage = new LandingPage();
         }
     }
 }

@@ -2,7 +2,7 @@ package de.oszimt.controller;
 
 import de.oszimt.database.model.versand.Kunden;
 
-public class Registration {
+public class MandatoryInformation {
 
     public boolean validID(String id) {
         try {
